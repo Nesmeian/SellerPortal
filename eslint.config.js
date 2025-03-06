@@ -12,9 +12,12 @@ export default [
     pluginReact.configs.flat.recommended,
     {
         rules: {
-            'no-unused-vars': 'warn',
-            'no-undef': 'warn',
+            '@typescript-eslint/no-explicit-any': 'error',
+            '@typescript-eslint/explicit-function-return-type': 'error',
+            'no-unused-vars': 'off',
+            'no-undef': 'off',
             'react/react-in-jsx-scope': 'off',
+            'react/jsx-uses-react': 'off',
         },
     },
 ]

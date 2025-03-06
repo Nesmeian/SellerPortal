@@ -1,6 +1,7 @@
-import { useEffect } from 'react'
+import { ReactElement, useEffect } from 'react'
+import Header from './layout/Header'
 
-function App() {
+function App(): ReactElement {
     useEffect(() => {
         const fetchData = async (): Promise<void> => {
             const data = await fetch('http://localhost:3000/orders')
@@ -8,7 +9,11 @@ function App() {
         }
         fetchData()
     }, [])
-    return <>HELLO WORLD</>
+    return (
+        <>
+            <Header />
+        </>
+    )
 }
 
 export default App
