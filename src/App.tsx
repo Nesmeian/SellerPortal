@@ -3,13 +3,19 @@ import { ThemeProvider } from '@emotion/react'
 import { useAppTheme } from './theme'
 import './style.scss'
 import { JSX } from '@emotion/react/jsx-runtime'
-import { CssBaseline } from '@mui/material'
+import { Box, CssBaseline, Stack } from '@mui/material'
+import Sidebar from './layout/Sidebar'
 function App(): JSX.Element {
     const theme = useAppTheme()
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />
-            <Header />
+            <Stack direction="row">
+                <Sidebar />
+                <Box width="100%">
+                    <Header />
+                </Box>
+            </Stack>
         </ThemeProvider>
     )
 }

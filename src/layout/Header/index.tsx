@@ -2,10 +2,9 @@ import { Stack, useTheme } from '@mui/material'
 import { Menu as Burger } from '@mui/icons-material'
 import { ReactElement } from 'react'
 import UserBadge from '../../components/UserBadge'
-import Search from '../../components/Search'
 import { useDispatch } from 'react-redux'
 import ThemeSwitch from '../../components/ThemeSwitchIcon'
-import { themeToggler } from '../../reduxStore/themeSlice'
+import { themeToggler } from '../../store/themeSlice'
 
 export default function Header(): ReactElement {
     const mode = useTheme()
@@ -14,7 +13,6 @@ export default function Header(): ReactElement {
 
     return (
         <Stack
-            pt="10px"
             direction="row"
             justifyContent="space-between"
             alignItems="center"
@@ -22,7 +20,7 @@ export default function Header(): ReactElement {
                 p: '10px 20px',
                 border: `1px solid ${themeColor}`,
                 borderBottom: 'none',
-                borderRadius: '15px 15px 0 0',
+                borderTopRightRadius: '15px',
             }}
         >
             <Burger />
@@ -31,7 +29,6 @@ export default function Header(): ReactElement {
                     dispatch(themeToggler())
                 }}
             />
-            <Search />
             <UserBadge />
         </Stack>
     )
