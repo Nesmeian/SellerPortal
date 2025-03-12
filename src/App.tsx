@@ -1,18 +1,16 @@
-import { ReactElement, useEffect } from 'react'
 import Header from './layout/Header'
-
-function App(): ReactElement {
-    useEffect(() => {
-        const fetchData = async (): Promise<void> => {
-            const data = await fetch('http://localhost:3000/orders')
-            console.log(await data.json())
-        }
-        fetchData()
-    }, [])
+import { ThemeProvider } from '@emotion/react'
+import { useAppTheme } from './theme'
+import './style.scss'
+import { JSX } from '@emotion/react/jsx-runtime'
+import { CssBaseline } from '@mui/material'
+function App(): JSX.Element {
+    const theme = useAppTheme()
     return (
-        <>
+        <ThemeProvider theme={theme}>
+            <CssBaseline />
             <Header />
-        </>
+        </ThemeProvider>
     )
 }
 

@@ -1,9 +1,18 @@
-import { Avatar, Container } from '@mui/material'
-import logo from '/logo.jfif'
-export default function UserBadge(): JSX {
+import { Avatar, Box, Stack, Typography } from '@mui/material'
+
+import userImg from '/userImg.jfif'
+import { JSX } from '@emotion/react/jsx-runtime'
+export default function UserBadge(): JSX.Element {
+    const firstName = 'Leonid'
+    const secondName = 'Kozlovskiy'
+    const role = 'Admin'
     return (
-        <Container>
-            <Avatar alt="Logo" src={logo}></Avatar>
-        </Container>
+        <Stack direction="row">
+            <Avatar alt="Logo" src={userImg}></Avatar>
+            <Box>
+                <Typography>{`${firstName} ${secondName}`}</Typography>
+                <Typography>{role}</Typography>
+            </Box>
+        </Stack>
     )
 }
