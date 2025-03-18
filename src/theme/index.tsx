@@ -8,7 +8,6 @@ export const useAppTheme = (): Theme => {
         typography: {
             fontFamily: '"Poppins",  "Arial", sans-serif',
         },
-
         palette: {
             mode: mode === 'dark' ? 'dark' : 'light',
         },

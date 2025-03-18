@@ -1,18 +1,22 @@
-import { Box, Stack, Typography } from '@mui/material'
+import { Box, Stack, Typography, useTheme } from '@mui/material'
 import { JSX } from 'react'
 import SideBarLink from '../../components/SideBarLink'
 import CampaignIcon from '@mui/icons-material/Campaign'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
-import AppSettings from '../../components'
+import AppSettings from '../../components/SidebarSettings'
+
 export default function Sidebar(): JSX.Element {
+    const mode = useTheme()
+    const themeColor = mode.palette.mode === 'dark' ? '#121619' : '#1A202E'
     return (
         <Stack
+            overflow="hidden"
             direction="column"
             justifyContent="space-between"
             sx={{
-                background: '#1A202E',
+                background: themeColor,
                 width: '20%',
-                height: '100vh',
+                height: '96vh',
                 borderRadius: '15px 0 0 15px ',
                 color: '#CFD8E3',
             }}

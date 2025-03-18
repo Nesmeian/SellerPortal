@@ -1,6 +1,20 @@
 import { styled, Switch } from '@mui/material'
-
-const ThemeSwitch = styled(Switch)(({ theme }) => ({
+import React, { JSX } from 'react'
+import { themeToggler } from '../../../store/themeSlice'
+import { useDispatch } from 'react-redux'
+export default function ThemeSwitch(): JSX.Element {
+    const dispatch = useDispatch()
+    console.log(themeToggler())
+    return (
+        <ThemeSwitchContainer
+            onClick={(event: React.MouseEvent) => {
+                event.stopPropagation()
+                setTimeout(() => dispatch(themeToggler()), 150)
+            }}
+        />
+    )
+}
+export const ThemeSwitchContainer = styled(Switch)(({ theme }) => ({
     width: 62,
     height: 34,
     padding: 7,
@@ -55,4 +69,3 @@ const ThemeSwitch = styled(Switch)(({ theme }) => ({
         }),
     },
 }))
-export default ThemeSwitch
