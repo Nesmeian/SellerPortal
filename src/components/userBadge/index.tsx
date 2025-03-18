@@ -1,6 +1,6 @@
 import { Avatar, Box, Stack, Typography } from '@mui/material'
 
-import userImg from '/userImg.jfif'
+import userImg from '/public/img/userImg.jfif'
 import { JSX } from '@emotion/react/jsx-runtime'
 export default function UserBadge(): JSX.Element {
     const firstName = 'Leonid'
