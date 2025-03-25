@@ -5,9 +5,9 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./server:/server
+      - ./server:/src
       - /server/node_modules
-
+    working_dir: /src
   client:
     build:
       context: ./client
